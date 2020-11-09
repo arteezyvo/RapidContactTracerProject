@@ -25,7 +25,15 @@ namespace RapidContactTracer
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
                       "~/Content/site.css",
-                      "~/Content/app.css"));
+                      "~/Content/app.css",
+                      "~/Content/seatingchartstyle.css"));
+            bundles.Add(new StyleBundle("~/Content/jpg").Include(
+                      "~/Content/asu.jpg",
+                      "~/Content/image1.jpg",
+                      "~/Content/image2.jpg",
+                      "~/Content/image3.jpg",
+                      "~/Content/shannonhealth.jpg",
+                      "~/Content/coronavirus.mobile.banner_1.jpg"));
         }
     }
 }
