@@ -1,7 +1,8 @@
-﻿@{
-    ViewBag.Title = "Seating Chart";
-}
+﻿@model IEnumerable<RapidContactTracer.Models.SeatingChart>
 
+@{
+    ViewBag.Title = "Index";
+}
 
 <div class="collapse navbar-collapse" id="bs-nav-demo">
     <ul class="nav navbar-nav navbar-right">
@@ -73,40 +74,9 @@
         </div>
     </div>
 </div>
-
-<!--<div class="container2">
-    <div class="row" id="row1">
-        <div class="column c1">
-            <a><p onclick="setTimeout(myFunction, 2000);">Seat 1</p><span class="s-name">Name</span></a>
-            <a><p onclick="setTimeout(myFunction, 2000);">Seat 2</p><span class="s-name">Name</span></a>
-            <a><p onclick="setTimeout(myFunction, 3000);">Seat 3</p><span class="s-name">Name</span></a>
-        </div>
-        <div class="column c2">
-            <a><p onclick="setTimeout(myFunction, 3000);">Seat 4</p><span class="s-name">Name</span></a>
-            <a><p onclick="setTimeout(myFunction, 3000);">Seat 5</p><span class="s-name">Name</span></a>
-            <a><p onclick="setTimeout(myFunction, 3000);">Seat 6</p><span class="s-name">Name</span></a>
-        </div>
-    </div>
-    <div class="row" id="row1">
-        <div class="column c1">
-            <a><p onclick="setTimeout(myFunction, 3000);">Seat 7</p><span class="s-name">Name</span></a>
-            <a><p onclick="setTimeout(myFunction, 3000);">Seat 8</p><span class="s-name">Name</span></a>
-            <a><p onclick="setTimeout(myFunction, 3000);">Seat 9</p><span class="s-name">Name</span></a>
-        </div>
-        <div class="column c2">
-            <a><p onclick="setTimeout(myFunction, 3000);">Seat 10</p><span class="s-name">Name</span></a>
-            <a><p onclick="setTimeout(myFunction, 3000);">Seat 11</p><span class="s-name">Name</span></a>
-            <a><p onclick="setTimeout(myFunction, 3000);">Seat 12</p><span class="s-name">Name</span></a>
-        </div>
-    </div>
-</div>
-
-<script>
-    function myFunction() {
-        alert('You have to quarantine for 14 days');
-    }
-</script>-->
-
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="utf-8" />
@@ -117,7 +87,7 @@
             width: 150px;
             border: 5px solid gray;
             cursor: pointer;
-            background-color: white;
+            background-color: black;
         }
 
         .walk {
@@ -133,74 +103,114 @@
         }
     </style>
 
-
-
 </head>
 <body>
 
     <div style="border:1px solid gray; width:130px;">
         <table>
             <tr>
-                <td colspan="6"></td>
+                <td colspan="4"></td>
                 <td><div class="board"></div></td>
             </tr>
             <tr>
-                <td><div class="seat"></div> </td>
-                <td><div class="seat"></div></td>
-                <td><div class="seat"></div></td>
-                <td class="walk">  </td>
-                <td><div class="seat"></div></td>
-                <td><div class="seat"></div></td>
-                <td><div class="seat"></div></td>
+                @foreach (var item in Model)
+                {
+                    <td><div class="seat">@Html.DisplayFor(modelItem => item.FirstName)</div></td>
+                }
+                <!--<td><div class="seat"></div></td>
+    <td><div class="seat"></div></td>-->
+                <td class="walk"></td>
+                <!--<td><div class="seat"></div></td>
+    <td><div class="seat"></div></td>
+    <td><div class="seat"></div></td>-->
             </tr>
-            <tr>
-                <td><div class="seat"></div> </td>
-                <td><div class="seat"></div></td>
-                <td><div class="seat"></div></td>
-                <td class="walk">  </td>
-                <td><div class="seat"></div></td>
-                <td><div class="seat"></div></td>
-                <td><div class="seat"></div></td>
-            </tr>
-            <tr>
-                <td><div class="seat"></div> </td>
-                <td><div class="seat"></div></td>
-                <td><div class="seat"></div></td>
-                <td class="walk">  </td>
-                <td><div class="seat"></div></td>
-                <td><div class="seat"></div></td>
-                <td><div class="seat"></div></td>
-            </tr>
-            <tr>
-                <td><div class="seat"></div> </td>
-                <td><div class="seat"></div></td>
-                <td><div class="seat"></div></td>
-                <td class="walk">  </td>
-                <td><div class="seat"></div></td>
-                <td><div class="seat"></div></td>
-                <td><div class="seat"></div></td>
-            </tr>
-            
-        </table>
-    </div>
+        <!--<tr>
+            <td><div class="seat"></div> </td>
+            <td><div class="seat"></div></td>
+            <td><div class="seat"></div></td>
+            <td class="walk">  </td>
+            <td><div class="seat"></div></td>
+            <td><div class="seat"></div></td>
+            <td><div class="seat"></div></td>
+        </tr>
+        <tr>
+            <td><div class="seat"></div> </td>
+            <td><div class="seat"></div></td>
+            <td><div class="seat"></div></td>
+            <td class="walk">  </td>
+            <td><div class="seat"></div></td>
+            <td><div class="seat"></div></td>
+            <td><div class="seat"></div></td>
+        </tr>
+        <tr>
+            <td><div class="seat"></div> </td>
+            <td><div class="seat"></div></td>
+            <td><div class="seat"></div></td>
+            <td class="walk">  </td>
+            <td><div class="seat"></div></td>
+            <td><div class="seat"></div></td>
+            <td><div class="seat"></div></td>
+        </tr>-->
 
+</table>
+        </div>
 
-    <script>
+        <script>
 
-        allSeats = document.querySelectorAll('.seat');
-        for (var i = 0; i < allSeats.length; i++) {
-            var seat = allSeats[i];
-            seat.addEventListener('click', function () {
-                var bgclr = this.style.backgroundColor;
-                if (bgclr == 'red')
-                    this.style.backgroundColor = 'white'
-                else
-                    this.style.backgroundColor = 'red'
-            }, false);
+            allSeats = document.querySelectorAll('.seat');
+            for (var i = 0; i < allSeats.length; i++) {
+                var seat = allSeats[i];
+                seat.addEventListener('click', function () {
+                    var bgclr = this.style.backgroundColor;
+                    if (bgclr == 'red')
+                        this.style.backgroundColor = 'black'
+                    else
+                        this.style.backgroundColor = 'red'
+                }, false);
+            }
+
+        </script>
+    </body>
+    </html>
+
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.FirstName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.LastName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SeatingID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Email)
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.FirstName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.LastName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.SeatingID)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Email)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.ID }) |
+                    @Html.ActionLink("Details", "Details", new { id = item.ID }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.ID })
+                </td>
+            </tr>
         }
 
-    </script>
-
-
-</body>
-</html>
+    </table>

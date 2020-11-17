@@ -129,6 +129,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\SeatingChartController.cs" />
+    <Compile Include="Controllers\SeatingChartsController.cs" />
     <Compile Include="Controllers\TestingController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -180,6 +181,11 @@
     <Content Include="Views\Home\Testing.cshtml" />
     <Content Include="Views\Home\SeatingChart.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\SeatingCharts\Create.cshtml" />
+    <Content Include="Views\SeatingCharts\Delete.cshtml" />
+    <Content Include="Views\SeatingCharts\Details.cshtml" />
+    <Content Include="Views\SeatingCharts\Edit.cshtml" />
+    <Content Include="Views\SeatingCharts\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
